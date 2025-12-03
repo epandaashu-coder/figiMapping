@@ -1,15 +1,18 @@
+import os
 import pandas as pd
 import pyodbc
 import sys
+from dotenv import load_dotenv
 
+load_dotenv()
 
 def pull_data_from_database(ids_to_search):
     # --- Connection Details ---
-    SERVER = 'dcprdreportdb.dcc8fc7.eas.morningstar.com' 
-    DATABASE = 'CurrentData'
-    USERNAME = 'DataReader'     
-    PASSWORD = 'Read4Equity'     
-    TABLE_NAME = 'InvestmentIdentifiers'
+    SERVER = os.getenv('SERVER') 
+    DATABASE = os.getenv('DATABASE')
+    USERNAME = os.getenv('USERNAME')
+    PASSWORD = os.getenv('PASSWORD')
+    TABLE_NAME = os.getenv('TABLE_NAME')
     # ... other connection details as before ...
 
     # Example List of IDs you want to search for
