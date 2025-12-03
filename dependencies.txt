@@ -1,0 +1,4 @@
+import pandas       -->     for handling dataframes
+import pyodbc       -->     for ssms connection establishment
+import requests     -->     for api connection
+import virtualenv   -->     for using virtualenv(.venv)

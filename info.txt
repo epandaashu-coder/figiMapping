@@ -1,0 +1,21 @@
+Step 1: Retrieve Ids with ISIN of Equity Coverage wherein BBG Symbol & BBGID is not updated (SQL)
+
+Step 2: To establish the mapping between ExchangeId (GID) & Exchange Code (FIGI) as well as Currency Id (GID) & Currency (FIGI)
+
+Step 3: Establish OpenFIGIAPI Connection. API Key:https://api.openfigi.com/v3/mapping?X-OPENFIGI-APIKEY=879eac47-fad9-4138-8726-24c8f563701b&Content-Type=text/json
+
+Step 4: To retrieve data from OpenFigi using the input "ISIN + ExchangeCode + Currency"
+
+Step 5: Once retrieved, transform the data into desired format:
+
+    Columns
+       - ISIN,
+       - BBG Symbol,
+       - FIGI (BBGID)
+       
+Step 6: Prepare 2 Batch Update files (BBG Symbol & BBGID)
+
+    Columns
+       - *InvestmentId*,
+       - *ExchangeId*,
+       - Identifier (BBG Symbol / BBGID)
